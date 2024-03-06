@@ -56,6 +56,30 @@ public class App
         System.out.print("Q.2) ");
         System.out.println(formattedDate);
 
+        /*
+        Exercise3:
+        Create a LocalDate of last Monday. Then print out the entire week in a loop using standard ISO format.
+         */
+        DateTimeFormatter dayName = DateTimeFormatter.ofPattern("EEEE");
+        String currentDayName = dayName.format(currentDate);
+        System.out.println(currentDayName);
+        DateTimeFormatter isoFormatter = DateTimeFormatter.ISO_LOCAL_DATE;
+        String isoDate = currentDate.format(isoFormatter);
+        String day = "Wednesday";
+        if (day.equals(currentDayName)){
+            LocalDate currDate = LocalDate.now();
+
+            for (int i=0;i<7;i++){
+                String isDate = currDate.format(isoFormatter);
+                System.out.println(isDate);
+                currDate.plusDays(1);
+            }
+        } else {
+            System.out.println("No");
+        }
+
+        System.out.println(isoDate);
+
 
 
 
