@@ -1,5 +1,7 @@
 package se.String_Exercises;
 
+
+
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 
@@ -30,7 +32,7 @@ public class App
         System.out.println(zdt);
 
 
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd MMMM yyyy");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MMMM dd  yyyy");
         System.out.println(ld.format(dtf));
         System.out.println(dtf.format(ld));
 
@@ -43,6 +45,17 @@ public class App
         LocalDate currentDate = LocalDate.now();
         System.out.print("Q.1) ");
         System.out.println("Today " + currentDate);
+
+        /*
+        Exercise2:
+        Create a LocalDate of the current day and print it out in the following
+        pattern using DateTimeFormatter: Torsdag 29 mars.
+         */
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE d MMMM");
+        String formattedDate = currentDate.format(formatter);
+        System.out.print("Q.2) ");
+        System.out.println(formattedDate);
+
 
 
 
