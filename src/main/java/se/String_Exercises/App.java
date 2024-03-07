@@ -1,15 +1,7 @@
 package se.String_Exercises;
-import java.util.List;
-import java.util.ArrayList;
 
-
-
-import java.lang.invoke.StringConcatFactory;
-import java.lang.reflect.Array;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * Hello world!
@@ -66,40 +58,22 @@ public class App
         Exercise3:
         Create a LocalDate of last Monday. Then print out the entire week in a loop using standard ISO format.
          */
+        // String [] allDays = {"Monday", "Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"};
         DateTimeFormatter dayName = DateTimeFormatter.ofPattern("EEEE");
         String currentDayName = dayName.format(currentDate);
-        System.out.println(currentDayName);
+        System.out.println("Day name: " + currentDayName);
         DateTimeFormatter isoFormatter = DateTimeFormatter.ISO_LOCAL_DATE;
+        // Iso date
         String isoDate = currentDate.format(isoFormatter);
-        String day = "Wednesday";
-        String [] allDays = {"Monday", "Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"};
-        System.out.println(allDays);
-        // System.out.println("list: "+ allDays.indexOf("Monday"));
+        System.out.println("ISO: " + isoDate);
 
-        if (currentDayName.equals(day)){
-            for (int i = 0; i <7;i++){
-                System.out.println(currentDate.plusDays(i));
-        }
-        } else{
-            for (int index = 0; index < allDays.length; index++){
-                System.out.println(index);
-                if (day.equals(allDays[index])){
-                    System.out.println(allDays[index]);
-                    int dayOne = 0;
-                    int lastDay = allDays.length - index + 1;
-                    System.out.println(currentDate);
-                    System.out.println(allDays[dayOne]);
-                    System.out.println(allDays[lastDay]);
-
-                    break;
-                }
-
-
-            }
+        // ISO for 7 days
+        for (int i= 0; i<7;i++){
+            System.out.println(currentDate.plusDays(i));
         }
     }
+}
 
-    }
 
 
 
