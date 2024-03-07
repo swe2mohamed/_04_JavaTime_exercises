@@ -1,7 +1,10 @@
 package se.String_Exercises;
 
+
+
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+
 
 /**
  * Hello world!
@@ -9,8 +12,7 @@ import java.time.format.DateTimeFormatter;
  */
 public class App 
 {
-    public static void main( String[] args )
-    {
+    public static void main( String[] args )  {
         /*
         Introduction
          */
@@ -68,9 +70,21 @@ public class App
         System.out.println("ISO: " + isoDate);
 
         // ISO for 7 days
+        System.out.println("Q.3) ");
         for (int i= 0; i<7;i++){
             System.out.println(currentDate.plusDays(i));
         }
+
+        /*
+        Exercise 4:
+        Create a LocalDate object from a String by using the .parse() method.
+         */
+        String dateS = "2020-02-01";
+        DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate date = LocalDate.parse(dateS,formatter2);
+        System.out.println("Q.4) " +date);
+
+
     }
 }
 
