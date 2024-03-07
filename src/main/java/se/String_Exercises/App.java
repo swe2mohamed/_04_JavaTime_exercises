@@ -1,9 +1,15 @@
 package se.String_Exercises;
+import java.util.List;
+import java.util.ArrayList;
 
 
 
+import java.lang.invoke.StringConcatFactory;
+import java.lang.reflect.Array;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Hello world!
@@ -66,27 +72,34 @@ public class App
         DateTimeFormatter isoFormatter = DateTimeFormatter.ISO_LOCAL_DATE;
         String isoDate = currentDate.format(isoFormatter);
         String day = "Wednesday";
-        if (day.equals(currentDayName)){
-            LocalDate currDate = LocalDate.now();
+        String [] allDays = {"Monday", "Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"};
+        System.out.println(allDays);
+        // System.out.println("list: "+ allDays.indexOf("Monday"));
 
-            for (int i=0;i<7;i++){
-                String isDate = currDate.format(isoFormatter);
-                System.out.println(isDate);
-                currDate.plusDays(1);
+        if (currentDayName.equals(day)){
+            for (int i = 0; i <7;i++){
+                System.out.println(currentDate.plusDays(i));
+        }
+        } else{
+            for (int index = 0; index < allDays.length; index++){
+                System.out.println(index);
+                if (day.equals(allDays[index])){
+                    System.out.println(allDays[index]);
+                    int dayOne = 0;
+                    int lastDay = allDays.length - index + 1;
+                    System.out.println(currentDate);
+                    System.out.println(allDays[dayOne]);
+                    System.out.println(allDays[lastDay]);
+
+                    break;
+                }
+
+
             }
-        } else {
-            System.out.println("No");
         }
-
-        System.out.println(isoDate);
-
-
-
-
-
-        }
-
-
+    }
 
     }
+
+
 
