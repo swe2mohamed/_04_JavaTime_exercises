@@ -4,6 +4,7 @@ package se.String_Exercises;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAdjusters;
 
 
 /**
@@ -51,15 +52,23 @@ public class App
         Create a LocalDate of the current day and print it out in the following
         pattern using DateTimeFormatter: Torsdag 29 mars.
          */
+        LocalDate currentDate0 = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE d MMMM");
-        String formattedDate = currentDate.format(formatter);
-        System.out.print("Q.2) ");
-        System.out.println(formattedDate);
+        String formatterDate0 = currentDate0.format(formatter);
+        System.out.println("Q.2) "+formatterDate0);
+
 
         /*
         Exercise3:
         Create a LocalDate of last Monday. Then print out the entire week in a loop using standard ISO format.
          */
+        LocalDate today = LocalDate.now();
+        LocalDate lastMonday = today.with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY));
+        for (int i = 0; i<7;i++){
+            System.out.println(lastMonday.plusDays(i));
+        }
+
+        /*
         // String [] allDays = {"Monday", "Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"};
         DateTimeFormatter dayName = DateTimeFormatter.ofPattern("EEEE");
         String currentDayName = dayName.format(currentDate);
@@ -74,19 +83,25 @@ public class App
         for (int i= 0; i<7;i++){
             System.out.println(currentDate.plusDays(i));
         }
+        */
+
+    }
+}
+
 
         /*
         Exercise 4:
         Create a LocalDate object from a String by using the .parse() method.
          */
+        /*
+
+
         String dateS = "2020-02-01";
         DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate date = LocalDate.parse(dateS,formatter2);
         System.out.println("Q.4) " +date);
+           */
 
-
-    }
-}
 
 
 
