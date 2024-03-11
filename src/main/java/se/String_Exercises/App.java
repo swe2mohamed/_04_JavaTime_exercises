@@ -114,6 +114,13 @@ public class App {
         LocalDate currentDate8 = LocalDate.now().plus(period2);
         System.out.println("Q.8) " + currentDate8);
 
+        /*
+        Exercise 9:
+        Create a LocalTime object of the current time.
+         */
+        LocalTime currentTime = LocalTime.now();
+        System.out.println("Q.9) "+ currentTime);
+
 
     }
 }
