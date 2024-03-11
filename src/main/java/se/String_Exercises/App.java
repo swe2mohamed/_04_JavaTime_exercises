@@ -106,8 +106,13 @@ public class App {
         System.out.println("Q.7) "+period);
 
         /*
-
+        Exercise 8 :
+        Create a period of 4 years, 7 months and 29 days.
+        Then create a LocalDate of current date and add the period you created to the current date
          */
+        Period period2 = Period.of(4,7,29);
+        LocalDate currentDate8 = LocalDate.now().plus(period2);
+        System.out.println("Q.8) " + currentDate8);
 
 
     }
