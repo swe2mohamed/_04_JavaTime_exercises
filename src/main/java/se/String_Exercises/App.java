@@ -85,6 +85,17 @@ public class App {
         LocalDate dateBirthday = LocalDate.of(1990,3,31);
         DayOfWeek birthday = DayOfWeek.from(dateBirthday);
         System.out.println("Q.5) " + birthday);
+
+
+        /*
+        Exercise6:
+        Create a LocalDate of current date plus 10 years and minus 10 months.
+        From that date extract the month and print it out.
+         */
+        LocalDate currentDate6 = LocalDate.now().plusYears(10).minusMonths(5);
+        Month monthName = Month.from(currentDate6);
+        System.out.println("Q.6) " +monthName);
+
     }
 }
 
