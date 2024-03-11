@@ -76,6 +76,15 @@ public class App {
         LocalDate date = LocalDate.parse(dateString,formatter2);
         System.out.println("Q.4) " +date);
 
+        /*
+        Exercise5:
+        The date time api provides enums for time units such as day and month.
+        Create a LocalDate of your birthday and extract the day of week for that date.
+        Ex. 1945-05-08 -> TUESDAY
+         */
+        LocalDate dateBirthday = LocalDate.of(1990,3,31);
+        DayOfWeek birthday = DayOfWeek.from(dateBirthday);
+        System.out.println("Q.5) " + birthday);
     }
 }
 
