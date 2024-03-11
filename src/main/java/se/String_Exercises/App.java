@@ -96,6 +96,16 @@ public class App {
         Month monthName = Month.from(currentDate6);
         System.out.println("Q.6) " +monthName);
 
+        /*
+        Exercise7:
+         Using the LocalDate from exercise 6 and your birthdate,
+         create a Period between your birthdate and the date from exercise 5.
+         Print out the elapsed years, months and days.
+         */
+        Period period = Period.between(currentDate6,dateBirthday);
+        System.out.println("Q.7) "+period);
+
+
     }
 }
 
