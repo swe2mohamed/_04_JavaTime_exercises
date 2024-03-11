@@ -105,6 +105,10 @@ public class App {
         Period period = Period.between(currentDate6,dateBirthday);
         System.out.println("Q.7) "+period);
 
+        /*
+
+         */
+
 
     }
 }
