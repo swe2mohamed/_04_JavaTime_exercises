@@ -11,25 +11,24 @@ import java.time.temporal.TemporalAdjusters;
  * Hello world!
  *
  */
-public class App 
-{
-    public static void main( String[] args )  {
+public class App {
+    public static void main(String[] args) {
         /*
         Introduction
          */
-        LocalDate ld = LocalDate.of(2024, Month.FEBRUARY,6);
+        LocalDate ld = LocalDate.of(2024, Month.FEBRUARY, 6);
         System.out.println(ld);
 
         ld = ld.plusDays(1);
         System.out.println(ld);
 
-        LocalTime lt = LocalTime.of(14,38);
+        LocalTime lt = LocalTime.of(14, 38);
         System.out.println(lt);
 
-        LocalDateTime ldt = LocalDateTime.of(ld,lt);
+        LocalDateTime ldt = LocalDateTime.of(ld, lt);
         System.out.println(ldt);
 
-        ZonedDateTime zdt = ZonedDateTime.of(ldt,ZoneId.of("Europe/Athens"));
+        ZonedDateTime zdt = ZonedDateTime.of(ldt, ZoneId.of("Europe/Athens"));
         System.out.println(zdt);
 
 
@@ -55,7 +54,7 @@ public class App
         LocalDate currentDate0 = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE d MMMM");
         String formatterDate0 = currentDate0.format(formatter);
-        System.out.println("Q.2) "+formatterDate0);
+        System.out.println("Q.2) " + formatterDate0);
 
 
         /*
@@ -64,43 +63,22 @@ public class App
          */
         LocalDate today = LocalDate.now();
         LocalDate lastMonday = today.with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY));
-        for (int i = 0; i<7;i++){
+        for (int i = 0; i < 7; i++) {
             System.out.println(lastMonday.plusDays(i));
         }
-
-        /*
-        // String [] allDays = {"Monday", "Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"};
-        DateTimeFormatter dayName = DateTimeFormatter.ofPattern("EEEE");
-        String currentDayName = dayName.format(currentDate);
-        System.out.println("Day name: " + currentDayName);
-        DateTimeFormatter isoFormatter = DateTimeFormatter.ISO_LOCAL_DATE;
-        // Iso date
-        String isoDate = currentDate.format(isoFormatter);
-        System.out.println("ISO: " + isoDate);
-
-        // ISO for 7 days
-        System.out.println("Q.3) ");
-        for (int i= 0; i<7;i++){
-            System.out.println(currentDate.plusDays(i));
-        }
-        */
-
-    }
-}
-
-
         /*
         Exercise 4:
         Create a LocalDate object from a String by using the .parse() method.
          */
-        /*
 
-
-        String dateS = "2020-02-01";
+        String dateString = "2020-02-01";
         DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate date = LocalDate.parse(dateS,formatter2);
+        LocalDate date = LocalDate.parse(dateString,formatter2);
         System.out.println("Q.4) " +date);
-           */
+
+    }
+}
+
 
 
 
